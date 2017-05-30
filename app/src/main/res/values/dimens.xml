@@ -2,4 +2,5 @@
 <resources>
     <dimen name="activity_margin">16dp</dimen>
     <dimen name="login_form_txt_size">12sp</dimen>
+    <dimen name="doctor_list_profile_img_size">80dp</dimen>
 </resources>

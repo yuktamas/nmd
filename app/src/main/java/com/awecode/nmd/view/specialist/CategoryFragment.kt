@@ -9,23 +9,23 @@ import com.awecode.stockapp.util.extensions.hide
 import com.awecode.stockapp.util.extensions.toast
 import com.awecode.stockapp.view.adapter.SpecialistAdapter
 import com.awecode.stockapp.view.base.BaseFragment
-import kotlinx.android.synthetic.main.fragment_specialists.*
+import kotlinx.android.synthetic.main.fragment_category.*
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
 
 /**
  * Created by munnadroid on 5/30/17.
  */
-class SpecialistsFragment : BaseFragment() {
-    override val layoutId: Int = R.layout.fragment_specialists
+class CategoryFragment : BaseFragment() {
+    override val layoutId: Int = R.layout.fragment_category
 
     companion object {
-        fun newInstance(): SpecialistsFragment {
-            return SpecialistsFragment()
+        fun newInstance(): CategoryFragment {
+            return CategoryFragment()
         }
 
-        fun newInstance(isFromActivity: Boolean): SpecialistsFragment {
-            var fragment = SpecialistsFragment()
+        fun newInstance(isFromActivity: Boolean): CategoryFragment {
+            var fragment = CategoryFragment()
             fragment.setData(isFromActivity)
             return fragment
         }
