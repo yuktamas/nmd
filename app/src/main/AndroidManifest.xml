@@ -28,6 +28,7 @@
 
         <activity
             android:name=".view.login.LoginActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"
             android:screenOrientation="portrait" />
     </application>
 

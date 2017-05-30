@@ -39,7 +39,7 @@ class MainActivity : BaseActivity() {
                 savedInstance = savedInstanceState
                 translucentStatusBar = true
 
-                profile("Meg Ryan", "meg@gmail.com") {
+                profile("Meg Ryan", "admin@gmail.com") {
                     iconUrl = "http://2.bp.blogspot.com/-oO8dYDnh8JY/TrUrINcULQI/AAAAAAAAFsk/3nAkhc0sdUY/s1600/1.jpg"
                     identifier = 100
                 }
