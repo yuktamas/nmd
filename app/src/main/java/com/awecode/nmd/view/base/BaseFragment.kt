@@ -3,9 +3,11 @@ package com.awecode.stockapp.view.base
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v4.app.FragmentManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.awecode.nmd.R
 import com.awecode.stockapp.util.extensions.inflate
 
 /**
@@ -40,5 +42,25 @@ abstract class BaseFragment : Fragment() {
 
     open fun fragmentVisible() {
 
+    }
+
+    fun changeFragment(fragment: Fragment, cleanStack: Boolean = false, addToBackStack: Boolean = true) {
+        val ft = activity.supportFragmentManager.beginTransaction()
+        if (cleanStack) {
+            clearBackStack()
+        }
+        ft.replace(R.id.container, fragment)
+        if (addToBackStack)
+            ft.addToBackStack(null)
+        ft.commit()
+    }
+
+
+    fun clearBackStack() {
+        val manager = activity.supportFragmentManager
+        if (manager.backStackEntryCount > 0) {
+            val first = manager.getBackStackEntryAt(0)
+            manager.popBackStack(first.id, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+        }
     }
 }

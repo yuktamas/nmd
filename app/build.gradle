@@ -57,4 +57,10 @@ dependencies {
 
     //anko
     compile group: "org.jetbrains.anko", name: "anko-common", version: "$anko_version"
+
+    //circular imageview
+    compile 'de.hdodenhof:circleimageview:2.1.0'
+
+    //picaso
+    compile 'com.squareup.picasso:picasso:2.5.2'
 }

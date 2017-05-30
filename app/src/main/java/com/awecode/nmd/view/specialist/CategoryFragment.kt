@@ -5,8 +5,10 @@ import android.support.v7.widget.LinearLayoutManager
 import android.view.View
 import com.awecode.nmd.R
 import com.awecode.nmd.models.Specialists
+import com.awecode.nmd.view.specialist.doctor.DoctorListActivity
+import com.awecode.nmd.view.specialist.doctor.DoctorListFragment
 import com.awecode.stockapp.util.extensions.hide
-import com.awecode.stockapp.util.extensions.toast
+import com.awecode.stockapp.util.extensions.launchActivity
 import com.awecode.stockapp.view.adapter.CategoryListAdapter
 import com.awecode.stockapp.view.base.BaseFragment
 import kotlinx.android.synthetic.main.fragment_category.*
@@ -24,6 +26,9 @@ class CategoryFragment : BaseFragment() {
             return CategoryFragment()
         }
 
+        /**
+         * for side menu - opened using activity- categoryactivity
+         */
         fun newInstance(isFromActivity: Boolean): CategoryFragment {
             var fragment = CategoryFragment()
             fragment.setData(isFromActivity)
@@ -52,7 +57,12 @@ class CategoryFragment : BaseFragment() {
         uiThread {
             recyclerView.layoutManager = LinearLayoutManager(activity)
             val adapter = CategoryListAdapter(dataList) {
-                toast("item clicked: $it")
+                if (mIsFromActivity)
+                    changeFragment(DoctorListFragment.newInstance())
+                else
+                    launchActivity<DoctorListActivity> {
+                        putExtra(DoctorListActivity.INTENT_DATA, it)
+                    }
             }
             recyclerView.adapter = adapter
         }

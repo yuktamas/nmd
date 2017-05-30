@@ -8,8 +8,19 @@ import paperparcel.PaperParcelable
  */
 
 @PaperParcel
-data class Specialists(val name: String, val id: Int, val totalCount:Int) : PaperParcelable {
+data class Specialists(val name: String, val id: Int, val totalCount: Int) : PaperParcelable {
     companion object {
         @JvmField val CREATOR = PaperParcelSpecialists.CREATOR
+    }
+}
+
+
+@PaperParcel
+data class Doctor(val name: String, val hospitalName: String, val email: String, val designation: String,
+                  val education: String, val experience: String, val profilePic: String,val department:String,
+                  val address: String)
+    : PaperParcelable {
+    companion object {
+        @JvmField val CREATOR = PaperParcelDoctor.CREATOR
     }
 }

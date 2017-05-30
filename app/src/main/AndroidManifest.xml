@@ -23,17 +23,21 @@
 
         <activity
             android:name=".MainActivity"
-            android:windowSoftInputMode="stateHidden"
             android:screenOrientation="portrait"
-            android:theme="@style/MaterialDrawerTheme.Light.DarkToolbar" />
+            android:theme="@style/MaterialDrawerTheme.Light.DarkToolbar"
+            android:windowSoftInputMode="stateHidden" />
 
         <activity
             android:name=".view.login.LoginActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" />
 
-        <activity android:name=".view.specialist.CategoryActivity"
-            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".view.specialist.CategoryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.specialist.doctor.DoctorListActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>
