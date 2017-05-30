@@ -7,7 +7,7 @@ import com.awecode.nmd.R
 import com.awecode.nmd.models.Specialists
 import com.awecode.stockapp.util.extensions.hide
 import com.awecode.stockapp.util.extensions.toast
-import com.awecode.stockapp.view.adapter.SpecialistAdapter
+import com.awecode.stockapp.view.adapter.CategoryListAdapter
 import com.awecode.stockapp.view.base.BaseFragment
 import kotlinx.android.synthetic.main.fragment_category.*
 import org.jetbrains.anko.doAsync
@@ -51,7 +51,7 @@ class CategoryFragment : BaseFragment() {
         var dataList = getDummyList()
         uiThread {
             recyclerView.layoutManager = LinearLayoutManager(activity)
-            val adapter = SpecialistAdapter(dataList) {
+            val adapter = CategoryListAdapter(dataList) {
                 toast("item clicked: $it")
             }
             recyclerView.adapter = adapter

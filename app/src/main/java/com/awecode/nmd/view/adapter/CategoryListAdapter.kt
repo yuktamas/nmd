@@ -8,18 +8,18 @@ import com.awecode.nmd.R
 import com.awecode.nmd.models.Specialists
 import com.awecode.nmd.util.textdrawable.TextDrawable
 import com.awecode.nmd.util.textdrawable.util.ColorGenerator
-import kotlinx.android.synthetic.main.item_specialist.view.*
+import kotlinx.android.synthetic.main.item_category.view.*
 
 
 /**
  * Created by munnadroid on 5/26/17.
  */
 
-class SpecialistAdapter(val specialList: List<Specialists>, val itemClick: (Specialists) -> Unit) :
-        RecyclerView.Adapter<SpecialistAdapter.ViewHolder>() {
+class CategoryListAdapter(val specialList: List<Specialists>, val itemClick: (Specialists) -> Unit) :
+        RecyclerView.Adapter<CategoryListAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_specialist, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_category, parent, false)
         return ViewHolder(view, itemClick)
     }
 
