@@ -12,10 +12,10 @@ import com.mikepenz.google_material_typeface_library.GoogleMaterial
 import com.mikepenz.materialdrawer.AccountHeader
 import com.mikepenz.materialdrawer.Drawer
 import com.mikepenz.materialdrawer.model.ProfileDrawerItem
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_main_2.*
 
 class MainActivity : BaseActivity() {
-    override val layoutId = R.layout.activity_main
+    override val layoutId = R.layout.activity_main_2
     private lateinit var result: Drawer
     private lateinit var headerResult: AccountHeader
 

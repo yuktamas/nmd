@@ -3,7 +3,9 @@ package com.awecode.nmd.view.splash
 import android.os.Bundle
 import android.os.Handler
 import android.view.KeyEvent
+import com.awecode.nmd.MainActivity
 import com.awecode.nmd.R
+import com.awecode.nmd.util.PrefsHelper
 import com.awecode.nmd.view.login.LoginActivity
 import com.awecode.stockapp.util.extensions.launchActivity
 import com.awecode.stockapp.util.extensions.makeFullscreen
@@ -22,7 +24,10 @@ class SplashActivity : BaseActivity() {
         window.makeFullscreen()
 
         Handler().postDelayed({
-            launchActivity<LoginActivity> { }
+            if (PrefsHelper.getLoginStatus())
+                launchActivity<MainActivity> { }
+            else
+                launchActivity<LoginActivity> { }
             finish()
         }, SPLASH_DISPLAY_LENGTH)
     }

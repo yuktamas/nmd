@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.widget.EditText
 import com.awecode.nmd.MainActivity
 import com.awecode.nmd.R
+import com.awecode.nmd.util.PrefsHelper
 import com.awecode.stockapp.util.extensions.launchActivity
 import com.awecode.stockapp.util.extensions.toast
 import com.awecode.stockapp.view.base.BaseActivity
@@ -53,9 +54,11 @@ class LoginActivity : BaseActivity(), Validator.ValidationListener {
         val password = passwordEditText.text.toString()
 
         if (username == "admin@gmail.com"
-                && password == "admin1")
+                && password == "admin1") {
+            PrefsHelper.setLoginStatus(true)
             launchActivity<MainActivity> { }
-        else
+            finish()
+        } else
             toast("Please enter valid credentials.")
     }
 
