@@ -13,8 +13,8 @@ import android.support.v7.app.ActionBar
 import android.text.Html
 import android.view.View
 import android.widget.TextView
-import com.awecode.stockapp.R
-import com.awecode.stockapp.model.listener.SingleClickListener
+import com.awecode.nmd.R
+
 
 /**
  * Created by munnadroid on 5/24/17.
@@ -44,9 +44,6 @@ fun TabLayout.changeTabIconColor(theme: Resources.Theme, slidingTabs: TabLayout,
         }
     }
 
-    fun View.singleClick(l: (View?) -> Unit) {
-        setOnClickListener(SingleClickListener(l))
-    }
 
     fun TextView.setTextAppearanceC(@StyleRes textAppearance: Int)
             = TextViewCompat.setTextAppearance(this, textAppearance)
