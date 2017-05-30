@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import com.awecode.nmd.R
 import com.awecode.nmd.models.Specialists
+import com.awecode.nmd.util.textdrawable.TextDrawable
+import com.awecode.nmd.util.textdrawable.util.ColorGenerator
 import kotlinx.android.synthetic.main.item_specialist.view.*
 
 
@@ -33,6 +35,15 @@ class SpecialistAdapter(val specialList: List<Specialists>, val itemClick: (Spec
         fun bindForecast(data: Specialists) {
             with(data) {
                 itemView.nameTextView.text = data.name
+
+                val generator = ColorGenerator.MATERIAL // or use DEFAULT
+                // generate random color
+                val color = generator.randomColor
+                val drawable = TextDrawable.builder()
+                        .buildRound(data.totalCount.toString(), color)
+                itemView.imageView.setImageDrawable(drawable)
+
+
                 itemView.setOnClickListener { itemClick(this) }
             }
         }

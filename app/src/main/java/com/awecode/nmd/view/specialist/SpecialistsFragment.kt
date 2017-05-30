@@ -5,6 +5,7 @@ import android.support.v7.widget.LinearLayoutManager
 import android.view.View
 import com.awecode.nmd.R
 import com.awecode.nmd.models.Specialists
+import com.awecode.stockapp.util.extensions.hide
 import com.awecode.stockapp.util.extensions.toast
 import com.awecode.stockapp.view.adapter.SpecialistAdapter
 import com.awecode.stockapp.view.base.BaseFragment
@@ -22,11 +23,24 @@ class SpecialistsFragment : BaseFragment() {
         fun newInstance(): SpecialistsFragment {
             return SpecialistsFragment()
         }
+
+        fun newInstance(isFromActivity: Boolean): SpecialistsFragment {
+            var fragment = SpecialistsFragment()
+            fragment.setData(isFromActivity)
+            return fragment
+        }
+    }
+
+    private var mIsFromActivity: Boolean = false
+
+    private fun setData(fromActivity: Boolean) {
+        this.mIsFromActivity = fromActivity;
     }
 
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        if (mIsFromActivity)
+            titleTextView.hide()
         setupListAdapter()
     }
 

@@ -27,6 +27,7 @@
     <string name="hello_meg_comma">Hello Meg,</string>
     <string name="specialists">Specialists</string>
     <string name="search_doctors_hospitals">Search Doctors, Hospitals</string>
+    <string name="doctors">Doctors</string>
 
 
 </resources>

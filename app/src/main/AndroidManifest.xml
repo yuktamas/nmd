@@ -23,6 +23,7 @@
 
         <activity
             android:name=".MainActivity"
+            android:windowSoftInputMode="stateHidden"
             android:screenOrientation="portrait"
             android:theme="@style/MaterialDrawerTheme.Light.DarkToolbar" />
 
@@ -30,6 +31,9 @@
             android:name=".view.login.LoginActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"
             android:screenOrientation="portrait" />
+
+        <activity android:name=".view.specialist.SpecialistActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

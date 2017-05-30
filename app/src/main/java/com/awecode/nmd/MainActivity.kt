@@ -7,7 +7,9 @@ import co.zsmb.materialdrawerkt.builders.drawer
 import co.zsmb.materialdrawerkt.draweritems.badgeable.primaryItem
 import co.zsmb.materialdrawerkt.draweritems.divider
 import co.zsmb.materialdrawerkt.draweritems.profile.profile
+import com.awecode.nmd.view.specialist.SpecialistActivity
 import com.awecode.nmd.view.specialist.SpecialistsFragment
+import com.awecode.stockapp.util.extensions.launchActivity
 import com.awecode.stockapp.view.base.BaseActivity
 import com.mikepenz.fontawesome_typeface_library.FontAwesome
 import com.mikepenz.google_material_typeface_library.GoogleMaterial
@@ -77,6 +79,10 @@ class MainActivity : BaseActivity() {
 
             primaryItem("Doctors") {
                 iicon = GoogleMaterial.Icon.gmd_person
+                onClick { _ ->
+                    launchActivity<SpecialistActivity> { }
+                    false
+                }
             }
 
             primaryItem("Hospitals") {
