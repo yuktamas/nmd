@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.awecode.nmd.R
 import com.awecode.nmd.models.Specialists
+import kotlinx.android.synthetic.main.item_specialist.view.*
 
 
 /**
@@ -29,9 +30,9 @@ class SpecialistAdapter(val specialList: List<Specialists>, val itemClick: (Spec
 
     class ViewHolder(view: View, val itemClick: (Specialists) -> Unit) : RecyclerView.ViewHolder(view) {
 
-        fun bindForecast(indice: Specialists) {
-            with(indice) {
-                //itemView.nameTextView.text = indice.name
+        fun bindForecast(data: Specialists) {
+            with(data) {
+                itemView.nameTextView.text = data.name
                 itemView.setOnClickListener { itemClick(this) }
             }
         }

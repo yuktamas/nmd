@@ -1,10 +1,16 @@
 package com.awecode.nmd.view.specialist
 
 import android.os.Bundle
+import android.support.v7.widget.LinearLayoutManager
 import android.view.View
 import com.awecode.nmd.R
 import com.awecode.nmd.models.Specialists
+import com.awecode.stockapp.util.extensions.toast
+import com.awecode.stockapp.view.adapter.SpecialistAdapter
 import com.awecode.stockapp.view.base.BaseFragment
+import kotlinx.android.synthetic.main.fragment_specialists.*
+import org.jetbrains.anko.doAsync
+import org.jetbrains.anko.uiThread
 
 /**
  * Created by munnadroid on 5/30/17.
@@ -21,10 +27,26 @@ class SpecialistsFragment : BaseFragment() {
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        setupListAdapter()
+    }
+
+    /**
+     * request api and populate in list in view
+     */
+    fun setupListAdapter() = doAsync {
+        var dataList = getDummyList()
+        uiThread {
+            recyclerView.layoutManager = LinearLayoutManager(activity)
+            val adapter = SpecialistAdapter(dataList) {
+                toast("item clicked: $it")
+            }
+            recyclerView.adapter = adapter
+        }
+
     }
 
 
-    fun dummyList(): List<Specialists> {
+    fun getDummyList(): List<Specialists> {
         return ArrayList<Specialists>().apply {
             add(Specialists("Allergist", 1, 10))
             add(Specialists("Anesthesiologist", 2, 20))
