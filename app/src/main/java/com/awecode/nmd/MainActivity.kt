@@ -7,8 +7,8 @@ import co.zsmb.materialdrawerkt.builders.drawer
 import co.zsmb.materialdrawerkt.draweritems.badgeable.primaryItem
 import co.zsmb.materialdrawerkt.draweritems.divider
 import co.zsmb.materialdrawerkt.draweritems.profile.profile
-import com.awecode.nmd.view.specialist.SpecialistActivity
-import com.awecode.nmd.view.specialist.SpecialistsFragment
+import com.awecode.nmd.view.specialist.CategoryActivity
+import com.awecode.nmd.view.specialist.CategoryFragment
 import com.awecode.stockapp.util.extensions.launchActivity
 import com.awecode.stockapp.view.base.BaseActivity
 import com.mikepenz.fontawesome_typeface_library.FontAwesome
@@ -31,7 +31,7 @@ class MainActivity : BaseActivity() {
 
         collapsibleToolbarLayout.setExpandedTitleColor(Color.parseColor("#00ffffff"))
 
-        changeFragment(SpecialistsFragment.newInstance(), cleanStack = true, addToBackStack = false)
+        changeFragment(CategoryFragment.newInstance(), cleanStack = true, addToBackStack = false)
     }
 
     fun setupNavigationMenus(savedInstanceState: Bundle?) {
@@ -72,7 +72,7 @@ class MainActivity : BaseActivity() {
                 iicon = GoogleMaterial.Icon.gmd_home
                 selected = true
                 onClick { _ ->
-                    changeFragment(SpecialistsFragment.newInstance(), cleanStack = true, addToBackStack = false)
+                    changeFragment(CategoryFragment.newInstance(), cleanStack = true, addToBackStack = false)
                     false
                 }
             }
@@ -80,7 +80,7 @@ class MainActivity : BaseActivity() {
             primaryItem("Doctors") {
                 iicon = GoogleMaterial.Icon.gmd_person
                 onClick { _ ->
-                    launchActivity<SpecialistActivity> { }
+                    launchActivity<CategoryActivity> { }
                     false
                 }
             }

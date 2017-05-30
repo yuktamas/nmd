@@ -32,7 +32,7 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"
             android:screenOrientation="portrait" />
 
-        <activity android:name=".view.specialist.SpecialistActivity"
+        <activity android:name=".view.specialist.CategoryActivity"
             android:screenOrientation="portrait"/>
     </application>
 
