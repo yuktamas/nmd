@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
+import com.awecode.nmd.R
 
 /**
  * Created by munnadroid on 5/23/17.
@@ -30,7 +31,7 @@ abstract class BaseActivity : AppCompatActivity() {
         if (cleanStack) {
             clearBackStack()
         }
-        ft.replace(0, fragment)
+        ft.replace(R.id.container, fragment)
         if (addToBackStack)
             ft.addToBackStack(null)
         ft.commit()

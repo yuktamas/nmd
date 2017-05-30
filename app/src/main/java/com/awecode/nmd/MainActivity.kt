@@ -1,30 +1,35 @@
 package com.awecode.nmd
 
+import android.graphics.Color
 import android.os.Bundle
 import co.zsmb.materialdrawerkt.builders.accountHeader
 import co.zsmb.materialdrawerkt.builders.drawer
 import co.zsmb.materialdrawerkt.draweritems.badgeable.primaryItem
 import co.zsmb.materialdrawerkt.draweritems.divider
 import co.zsmb.materialdrawerkt.draweritems.profile.profile
+import com.awecode.nmd.view.specialist.SpecialistsFragment
 import com.awecode.stockapp.view.base.BaseActivity
 import com.mikepenz.fontawesome_typeface_library.FontAwesome
 import com.mikepenz.google_material_typeface_library.GoogleMaterial
 import com.mikepenz.materialdrawer.AccountHeader
 import com.mikepenz.materialdrawer.Drawer
 import com.mikepenz.materialdrawer.model.ProfileDrawerItem
-import kotlinx.android.synthetic.main.activity_main_2.*
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseActivity() {
-    override val layoutId = R.layout.activity_main_2
+    override val layoutId = R.layout.activity_main
     private lateinit var result: Drawer
     private lateinit var headerResult: AccountHeader
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setSupportActionBar(toolbar)
-
+        toolbar.title = (getString(R.string.app_name))
         setupNavigationMenus(savedInstanceState)
 
+        collapsibleToolbarLayout.setExpandedTitleColor(Color.parseColor("#00ffffff"))
+
+        changeFragment(SpecialistsFragment.newInstance(), cleanStack = true, addToBackStack = false)
     }
 
     fun setupNavigationMenus(savedInstanceState: Bundle?) {
@@ -33,6 +38,8 @@ class MainActivity : BaseActivity() {
             hasStableIds = true
             savedInstance = savedInstanceState
             showOnFirstLaunch = true
+            closeOnClick = true
+            selectedItemByPosition = 0
 
             headerResult = accountHeader {
                 background = R.color.colorPrimary
@@ -59,7 +66,13 @@ class MainActivity : BaseActivity() {
             }
 
             primaryItem("Home") {
+
                 iicon = GoogleMaterial.Icon.gmd_home
+                selected = true
+                onClick { _ ->
+                    changeFragment(SpecialistsFragment.newInstance(), cleanStack = true, addToBackStack = false)
+                    false
+                }
             }
 
             primaryItem("Doctors") {
@@ -69,7 +82,6 @@ class MainActivity : BaseActivity() {
             primaryItem("Hospitals") {
                 iicon = GoogleMaterial.Icon.gmd_list
             }
-
 
             divider {}
 
@@ -87,6 +99,7 @@ class MainActivity : BaseActivity() {
         }
 
     }
+
 
     override fun onSaveInstanceState(outState: Bundle?) {
         result.saveInstanceState(outState)

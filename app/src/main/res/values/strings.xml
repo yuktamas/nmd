@@ -24,6 +24,9 @@
 		Aenean ullamcorper dolor non condimentum congue. Aenean mauris nunc, pellentesque at placerat vitae,
 		aliquet quis orci. Curabitur maximus augue ut bibendum sagittis.
 	</string>
+    <string name="hello_meg_comma">Hello Meg,</string>
+    <string name="specialists">Specialists</string>
+    <string name="search_doctors_hospitals">Search Doctors, Hospitals</string>
 
 
 </resources>
