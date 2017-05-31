@@ -9,6 +9,7 @@ import co.zsmb.materialdrawerkt.draweritems.divider
 import co.zsmb.materialdrawerkt.draweritems.profile.profile
 import com.awecode.nmd.view.specialist.CategoryActivity
 import com.awecode.nmd.view.specialist.CategoryFragment
+import com.awecode.stockapp.util.extensions.drawableRes
 import com.awecode.stockapp.util.extensions.launchActivity
 import com.awecode.stockapp.view.base.BaseActivity
 import com.mikepenz.fontawesome_typeface_library.FontAwesome
@@ -49,7 +50,7 @@ class MainActivity : BaseActivity() {
                 translucentStatusBar = true
 
                 profile("Meg Ryan", "admin@gmail.com") {
-                    iconUrl = "http://2.bp.blogspot.com/-oO8dYDnh8JY/TrUrINcULQI/AAAAAAAAFsk/3nAkhc0sdUY/s1600/1.jpg"
+                    iconDrawable=drawableRes(R.drawable.meg_ryan)
                     identifier = 100
                 }
                 onProfileChanged { _, profile, _ ->
