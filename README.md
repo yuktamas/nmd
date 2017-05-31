@@ -8,7 +8,7 @@
 
    
    
-This a project work of MBA ([SOMTU](http://www.somtu.edu.np/), Kirtipur) 2nd semester. This android application intents to keep record of nearby hospitals and their informations.
+This a project work of MBA ([SOMTU](http://www.somtu.edu.np/), Kirtipur) 2nd semester students as a partial fulfillment of E-marketing course. This application aims to help people of Nepal to access informantions regarding the nearby hospitals, doctors and their informations.This android application intents to keep record of nearby hospitals and their informations.
 
 This application is made using open source technology like kotlin and android development kit.
 
