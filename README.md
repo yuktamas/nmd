@@ -12,3 +12,9 @@ Library Used
 3. [Android-Iconics](https://github.com/mikepenz/Android-Iconics)
 4. [paperparcel](https://github.com/grandstaish/paperparcel)
 5. [Picasso](https://github.com/square/picasso)
+
+
+Contributors
+==============
+. Samyukta Gurung
+. Jashmin Shrestha
