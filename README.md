@@ -1,7 +1,9 @@
 # Nepal Medical Directory
 
 
-![NMD Home](https://github.com/munnadroid/nmd/blob/master/app/screenshot_1.png)
+<br>
+<img height="500" src="https://github.com/munnadroid/nmd/blob/master/app/screenshot_1.png"/>
+<br>
 
 
    
