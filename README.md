@@ -16,5 +16,5 @@ Library Used
 
 Contributors
 ==============
-. Samyukta Gurung
-. Jashmin Shrestha
+1. Samyukta Gurung   
+2. Jashmin Shrestha 
