@@ -24,4 +24,4 @@ Library Used
 Contributors
 ==============
 1. [Samyukta Gurung](https://github.com/yuktamas)   
-2. Jashmin Shrestha 
+2. [jashminshrestha02](Jashmin Shrestha)
